@@ -2034,25 +2034,7 @@
             window.addEventListener('resize', resize);
         })();
 
-        const BDAY = new Date('2026-05-13 T00:10:00');
-        const pad = n => String(n).padStart(2, '0');
-        function tick() {
-            const diff = BDAY - Date.now();
-            if (diff <= 0) {
-                document.getElementById('cd-title').textContent = '¡Feliz Cumpleaños Aidaaa! 🎉';
-                document.getElementById('cd-wrap').innerHTML = '<p class="cd-done">¡Hoy es el gran día! 🌸</p>';
-                return;
-            }
-            const d = Math.floor(diff / 86400000),
-                h = Math.floor((diff % 86400000) / 3600000),
-                m = Math.floor((diff % 3600000) / 60000),
-                s = Math.floor((diff % 60000) / 1000);
-            document.getElementById('cd-d').textContent = pad(d);
-            document.getElementById('cd-h').textContent = pad(h);
-            document.getElementById('cd-m').textContent = pad(m);
-            document.getElementById('cd-s').textContent = pad(s);
-        }
-        tick(); setInterval(tick, 1000);
+       
 
         function initReveal() {
             const io = new IntersectionObserver(entries => {
